@@ -1,0 +1,185 @@
+% Latex-pohja kandidaatintyölle
+% Alkuperäinen pohja Joona Widgren, muokkaukset Juho Heinisuo
+%
+% MIT -lisenssi
+
+\documentclass[12pt,a4paper,finnish]{article}
+
+% Makropakettiesimerkkejä
+\usepackage{setspace}
+\onehalfspacing{}
+\usepackage{amsthm}
+\usepackage{amsfonts}         
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[top=3cm, bottom=3cm, left=4.2cm, right=4.2cm]{geometry}
+\usepackage{graphics}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{verbatim}
+\usepackage{pdfpages}
+\usepackage{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\No}{\mathbb{N}_0}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\diam}{\operatorname{diam}}
+
+\theoremstyle{plain}
+
+\theoremstyle{definition}
+\newtheorem{maar}{Määritelmä}
+\newtheorem{esim}[equation]{Esimerkki}
+
+\theoremstyle{remark}
+\newtheorem{huom}[equation]{Huomautus}
+
+\theoremstyle{figure}
+\newtheorem{kuvio}[equation]{Kuvio}
+
+% Tästä alkaa itse dokumentti
+\begin{document}
+
+% Kansilehti
+\begin{titlepage}
+\linespread{1}
+\title{\vspace{20px} \hspace{0px}Otsikko \hspace{0px}}
+\date{}
+\maketitle
+\thispagestyle{empty}
+\vspace*{350px}
+\begin{tabbing}
+\hspace*{300px} \= \\
+\> \underline{etunimi} toinen-nimi sukunimi \\ % Kutsumanimi alleviivattu
+\> opiskelijanumero  \\
+\> Helsingin yliopisto \\
+\> Valtiotieteellinen tiedekunta \\
+\> Taloustieteen oppiaine \\
+\> Palautusaika % Kuukausi vuosi
+\end{tabbing}
+\end{titlepage}
+\pagebreak
+
+% Sisällysluettelo
+% Generoituu automaattisesti otsikoiden perusteella
+\tableofcontents
+\pagebreak
+
+\section{Johdanto}
+
+Tekstiä
+
+\pagebreak
+
+\section{Otsikko}\label{}
+
+Tekstiä
+
+\subsection{Alaotsikko}
+
+Listaesimerkki
+
+\begin{enumerate}
+
+    \item Listaelementti
+
+    \item Listaelementti, jossa footnote\footnote{Footnote}
+
+    \item Listaelementti, jossa inline-matematiikkaa $x_i = y_i * \pi$
+
+\end{enumerate}
+
+\subsection{Alaotsikko}
+
+Taulukkoesimerkki
+
+\begin{tabular}{l l}
+
+\textsc{otsikko 1} & \textsc{otsikko 2} \\
+
+    a & x \\
+    b & y \\
+    c & z \\
+
+\end{tabular}
+
+Taulukkoesimerkki matematiikan kanssa
+
+\begin{tabular}{l l l}
+    \textsc{merkintä} & \textsc{kaava} & \textsc{selitys} \\
+
+    $(F/P, i, n)$ & ${(1+i)}^n$ & Nykyarvosta tulevaisuuden arvoon \\
+    $(P/F, i, n)$ & ${(1+i)}^{-n}$ & Tulevaisuuden arvosta nykyarvoon \\
+    $(F/A, i, n)$ & $\frac{{(1+i)}^n-1}{i}$ & Yhden periodin arvosta tulevaisuuden arvoon \\
+    $(A/F, i, n)$ & $\frac{i}{{(1+i)}^n-1}$ & Tulevaisuuden arvosta yhden periodin arvoon \\
+    $(A/P, i, n)$ & $\frac{i{(1+i)}^n}{{(1+i)}^n-1}$ & Yhden periodin arvoon nykyarvosta \\
+    $(P/A, i, n)$ & $\frac{{(1+i)}^n-1}{i{(1+i)}^n}$ & Nykyarvoon yhden perioidin arvosta \\
+    
+\end{tabular}
+
+\subsection{Alaotsikko}
+
+\subsubsection{Alaotsikon alaotsikko}
+
+Matematiikkaesimerkki
+
+\begin{equation}
+    L = q(A/P, i_l/12, 12l)
+\end{equation}
+ 
+Toinen matematiikkaesimerkki
+ 
+\begin{equation}
+    C(N) = \sum_{t=0}^{N-1} K(P/A, i_f/12, 12)(P/F, i_f, t)
+\begin{equation}
+    PV_b(N) = s_b + C_b(N) + V(N) - P(N)
+\end{equation}
+
+\section{Otsikko}\label{}
+
+Tekstiä
+
+Kuvan voi liittää tiedostoon esimerkiksi näin (katso .tex-tiedoston kommentit):
+
+\centerline{\includegraphics[width=0.8\textwidth]{path/to/image}}
+\begin{kuvio}
+    Kuvan selitys
+\end{kuvio}
+
+\section{Johtopäätökset}\label{concl}
+
+Tekstiä
+
+\pagebreak
+
+\section*{Lähteet}
+\addcontentsline{toc}{section}{\hspace{18px}Lähteet}
+
+Glaeser, Edward L.; Gyourko, Joseph; Saks, Raven E. (2005).\\
+\textit{Why Have Housing Prices Gone Up?}\\
+American Economic Review. Volume 95 – Number 2.\\  
+
+\parindent=0pt
+
+Sinai, Todd; Souleles, Nicholas S. (2005).\\
+\textit{Owner-occupied Housing as a Hedge against Rent Risk.}\\
+Quarterly Journal of Economics. Volume 120 – Number 2.\\  
+
+\parindent=0pt
+
+jne.
+
+\pagebreak
+
+\textsc{Liitteet}
+
+Liitteen tekstit
+
+\end{document}
+
